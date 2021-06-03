@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:gudang_kopi/model/item_kategori.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -34,7 +35,7 @@ class DbHelper {
     )
     ''');
 
-    // tabel BerasMasuk
+    // tabel KopiMasuk
     batch.execute('''
     CREATE TABLE masuk (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -43,7 +44,7 @@ class DbHelper {
     idKategori INTEGER, FOREIGN KEY (idKategori) REFERENCES kategori(id)
           )''');
 
-    // tabel BerasKeluar
+    // tabel KopiKeluar
     batch.execute('''
     CREATE TABLE keluar (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

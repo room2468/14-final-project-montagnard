@@ -26,7 +26,7 @@ class Masuk {
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = Map<String, dynamic>();
     map['id'] = this._id;
-    map['merkBeras'] = this._jenisKopi;
+    map['jenisKopi'] = this._jenisKopi;
     map['jumlah'] = this._jumlah;
     map['idKategori'] = this._idKategori;
     return map;

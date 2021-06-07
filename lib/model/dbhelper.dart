@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:gudang_kopi/model/item_kategori.dart';
+import 'package:gudang_kopi/model/item_masuk.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
+
+import 'item_keluar.dart';
 
 class DbHelper {
   static DbHelper _dbHelper;
@@ -13,7 +16,8 @@ class DbHelper {
     Directory directory = await getApplicationDocumentsDirectory();
     String path = directory.path + 'item.db';
 //create, read databases
-    var itemDatabase = openDatabase(path, version: 4, onCreate: _createDb, onUpgrade: _onUpgrade);
+    var itemDatabase = openDatabase(path,
+        version: 4, onCreate: _createDb, onUpgrade: _onUpgrade);
 //mengembalikan nilai object sebagai hasil dari fungsinya
     return itemDatabase;
   }
@@ -25,7 +29,7 @@ class DbHelper {
   }
 
 //buat tabel baru dengan nama item
-   void _createDb(Database db, int version) async {
+  void _createDb(Database db, int version) async {
     Batch batch = db.batch();
     //tabel kategori
     batch.execute('''
@@ -100,8 +104,8 @@ class DbHelper {
 //update databases table kategori
   Future<int> updateKategori(Kategori object) async {
     Database db = await this.initDb();
-    int count = await db
-        .update('kategori', object.toMap(), where: 'id=?', whereArgs: [object.id]);
+    int count = await db.update('kategori', object.toMap(),
+        where: 'id=?', whereArgs: [object.id]);
     return count;
   }
 
@@ -116,11 +120,11 @@ class DbHelper {
   //update databases table Keluar
   Future<int> updateKeluar(Keluar object) async {
     Database db = await this.initDb();
-    int count = await db
-        .update('keluar', object.toMap(), where: 'id=?', whereArgs: [object.id]);
+    int count = await db.update('keluar', object.toMap(),
+        where: 'id=?', whereArgs: [object.id]);
     return count;
   }
-  
+
   //delete databases table Kategori
   Future<int> deleteKategori(int id) async {
     Database db = await this.initDb();

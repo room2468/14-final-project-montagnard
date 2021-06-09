@@ -35,7 +35,8 @@ class DbHelper {
     batch.execute('''
     CREATE TABLE kategori (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    beratKarung TEXT
+    beratKarung TEXT,
+    kualitas TEXT
     )
     ''');
 

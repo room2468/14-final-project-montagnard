@@ -9,7 +9,7 @@ class Keluar {
   get jumlah => this._jumlah;
   get idKategori => this._idKategori;
 
-  set merkBeras(String value) => this._jenisKopi = value;
+  set jenisKopi(String value) => this._jenisKopi = value;
   set jumlah(value) => this._jumlah = value;
   set idKategori(value) => this._idKategori = value;
 

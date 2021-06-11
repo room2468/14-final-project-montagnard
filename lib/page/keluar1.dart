@@ -8,6 +8,7 @@ import '../model/dbhelper.dart';
 import '../model/item_keluar.dart';
 import 'entrykeluar.dart';
 
+
 class Keluar1 extends StatefulWidget {
   @override
   Keluar1State createState() => Keluar1State();

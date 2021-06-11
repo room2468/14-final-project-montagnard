@@ -4,7 +4,6 @@ import 'package:gudang_kopi/model/item_kategori.dart';
 import 'package:gudang_kopi/model/item_masuk.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-
 import 'item_keluar.dart';
 
 class DbHelper {
@@ -36,7 +35,7 @@ class DbHelper {
     CREATE TABLE kategori (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     beratKarung TEXT,
-    kualitas TEXT
+    kualitas Text
     )
     ''');
 

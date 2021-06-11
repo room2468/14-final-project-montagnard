@@ -35,7 +35,7 @@ class DbHelper {
     CREATE TABLE kategori (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     beratKarung TEXT,
-    kualitas Text
+    kualitas TEXT
     )
     ''');
 

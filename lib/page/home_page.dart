@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gudang_kopi/page/kategori1.dart';
 import 'package:gudang_kopi/page/keluar1.dart';
-
-
-import 'kategori1.dart';
-import 'masuk1.dart';
+import 'package:gudang_kopi/page/masuk1.dart';
 
 class HomePage extends StatelessWidget {
   @override

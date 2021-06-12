@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:gudang_kopi/model/item_kategori.dart';
+import 'package:gudang_kopi/model/item_keluar.dart';
 import 'package:gudang_kopi/model/item_masuk.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import 'item_keluar.dart';
 
 class DbHelper {
   static DbHelper _dbHelper;
@@ -54,7 +54,7 @@ class DbHelper {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     jenisKopi TEXT,
     jumlah INTEGER,
-    idKategori INTEGER, FOREIGN KEY (id_kategori) REFERENCES kategori(id)
+    idKategori INTEGER, FOREIGN KEY (idKategori) REFERENCES kategori(id)
           )''');
     List<dynamic> res = await batch.commit();
   }

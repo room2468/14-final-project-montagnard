@@ -8,10 +8,10 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  String email = 'admin';
+  String user = 'admin';
   String password = 'admin';
 
-  TextEditingController emailController = new TextEditingController();
+  TextEditingController userController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
   final formKey = new GlobalKey<FormState>();
 
@@ -44,11 +44,11 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: TextFormField(
-                    controller: emailController,
+                    controller: userController,
                     keyboardType: TextInputType.emailAddress,
                     style: TextStyle(color: Colors.white),
                     validator: (value){
-                      return value.isEmpty ? "Email Tidak Boleh Kosong" : null;
+                      return value.isEmpty ? "User Tidak Boleh Kosong" : null;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 1.5)),
                       focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 1.5)),
-                      labelText: 'Email',
+                      labelText: 'User',
                       labelStyle: TextStyle(
                         color: Colors.white,
                       ),
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 RaisedButton(
                   onPressed: () {
-                    if (formKey.currentState.validate() && (emailController.text.toString() == email && passwordController.text.toString() == password)) {
+                    if (formKey.currentState.validate() && (userController.text.toString() == user && passwordController.text.toString() == password)) {
                       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage()), (Route<dynamic> route)=>false);
                     }
                   },

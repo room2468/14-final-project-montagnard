@@ -3,6 +3,7 @@ import 'package:gudang_kopi/page/kategori1.dart';
 import 'package:gudang_kopi/page/keluar1.dart';
 import 'package:gudang_kopi/page/login_page.dart';
 import 'package:gudang_kopi/page/masuk1.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -33,6 +34,26 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: 250,
+                      child: Carousel(
+                        autoplay: true,
+                        indicatorBgPadding: 8.0,
+                        images: [
+                          AssetImage('images/slider/arabica.png'),
+                          AssetImage('images/slider/robusta.jpg'),
+                          AssetImage('images/slider/excelsa.jpg'),
+                          AssetImage('images/slider/liberca.jpg'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               //button recomendation
               Container(
                 height: 50,
